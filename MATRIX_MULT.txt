@@ -1,0 +1,75 @@
+#include <stdio.h>
+#include <stdlib.h>
+//BY GENIUS SHRESTHA BCT A 025
+#include<stdio.h>
+#include<math.h>
+void main()
+{
+    int n1,n2,rem=0,num=0,x,i,j,c,c1=0,c2=0;
+    char re;
+    restart:
+    printf("Enter the starting of range : ");
+    scanf("%d",&n1);
+    printf("Enter the ending of range: ");
+    scanf("%d",&n2);
+    if (n1<n2)
+    {
+        printf("\nThe prime numbers between %d and %d are: ",n1,n2);
+        for(i=n1;i<=n2;i++)
+        {
+            c=0;
+            for(j=1;j<=i;j++)
+            {
+                if(i%j==0)
+                {
+                    c++;
+                }
+            }
+            if(c==2)
+            {
+                printf("%d, ",i);
+                c1++;
+            }
+        }
+
+        printf("\nThere are %d prime no between %d and %d.",c1,n1,n2);
+        //palindrome
+        printf("\nThe are palindrome no between %d and %d is :",n1,n2);
+        for(i=n1;i<=n2;i++)
+        {
+
+            x=i;
+            while(x!=0)
+            {
+                rem=x%10;
+                num = num + rem;
+                x/=10;
+            }
+            if(num==i)
+            {
+                c2++;
+            printf("%d, ",i);
+            }
+            rem=0;
+        num=0;
+        }
+        printf("\nThe palindrome no between %d and %d is :%d",n1,n2,c2);
+        goto again;
+    }
+    else
+    {
+    printf("The range in not well defined.");
+    again:
+    printf("\nDo you want to restart? y/n : ");
+    scanf(" %c",&re);
+    if(re=='y' || re=='Y'){
+    system("cls");
+    goto restart;
+    }
+    else if(re=='n' || re=='N'){
+        system("cls");
+        printf("Goodbye!");
+    }
+
+    }
+}
