@@ -4,9 +4,9 @@ class complex{
     int real,img;
     public:
     void getdata(){
-        cout<<"real:";
+        cout<<"real : ";
         cin>>real;
-        cout<<"img:";
+        cout<<"img : ";
         cin>>img;
     }
     complex add(complex a,complex b){
